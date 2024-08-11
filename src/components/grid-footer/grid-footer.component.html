@@ -1,0 +1,33 @@
+<div class="footer-container">
+  <div class="results-info">
+    <label>{{ rowsQuantity }} Resultados, Páginas: {{ pages() }}</label>
+  </div>
+
+  <div class="grid-navigation">
+    <button
+      class="nav-button"
+      (click)="previousPage()"
+      [disabled]="currentPage() <= 1"
+    >
+      -
+    </button>
+    <span class="current-page">{{ currentPage() }}</span>
+    <button
+      class="nav-button"
+      (click)="nextPage()"
+      [disabled]="currentPage() >= pages()"
+    >
+      +
+    </button>
+  </div>
+
+  <select
+    class="page-size-selector"
+    [(ngModel)]="rowsAmount"
+    (ngModelChange)="changeRowsAmount($event)"
+  >
+    <option class="page-size-button" [ngValue]="5">5</option>
+    <option class="page-size-button" [ngValue]="10">10</option>
+    <option class="page-size-button" [ngValue]="20">20</option>
+  </select>
+</div>

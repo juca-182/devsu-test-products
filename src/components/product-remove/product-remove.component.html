@@ -1,0 +1,16 @@
+<div *ngIf="isOpen" class="modal-overlay" (click)="close()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-body">
+      <p class="modal-message">
+        ¿Estas seguro de eliminar el producto {{ productName }}?
+      </p>
+    </div>
+    <div class="modal-divider"></div>
+    <div class="modal-footer">
+      <button class="cancel-button" (click)="close()">Cancelar</button>
+      <button class="confirm-button" (click)="executeCallback()">
+        Confirmar
+      </button>
+    </div>
+  </div>
+</div>

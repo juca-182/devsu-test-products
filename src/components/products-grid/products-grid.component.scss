@@ -1,0 +1,143 @@
+.products-grid-main-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search-button-main-container {
+  margin-bottom: 1rem;
+
+  .search-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+
+    input[type="text"] {
+      min-width: 15rem;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+  }
+}
+
+.grid-container {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+  color: #333;
+}
+
+.logo-placeholder {
+  width: 1.875rem;
+  height: 1.875rem;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+.context-menu {
+  position: relative;
+
+  select {
+    appearance: none;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    padding: 5px;
+    cursor: pointer;
+    width: 30px;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    option {
+      font-size: 1rem;
+    }
+
+    option[value=""] {
+      display: none;
+    }
+  }
+}
+
+.footer-container-grid {
+  padding: 0.9375rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+  .search-button-container {
+    flex-direction: column;
+    align-items: stretch;
+
+    input[type="text"],
+    button {
+      width: 100%;
+    }
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+
+  .logo-placeholder {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    font-size: 0.8rem;
+  }
+
+  th,
+  td {
+    padding: 0.4rem;
+  }
+
+  .logo-placeholder {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

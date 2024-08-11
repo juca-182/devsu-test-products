@@ -1,0 +1,65 @@
+<div class="products-grid-main-container">
+  <div class="search-button-main-container">
+    <div class="search-button-container">
+      <input
+        type="text"
+        [(ngModel)]="search"
+        (keyup)="searchProduct($event)"
+        placeholder="Buscar..."
+      />
+      <button (click)="navigate()">Agregar</button>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Logo</th>
+          <th>Nombre del producto</th>
+          <th>Descripción</th>
+          <th>Fecha de liberación</th>
+          <th>Fecha de reestructuración</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of productsFiltered; track product) {
+          <tr>
+            <td>
+              <img [src]="product.logo" alt="Logo" class="logo-placeholder" />
+            </td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.date_release | date }}</td>
+            <td>{{ product.date_revision | date }}</td>
+            <td class="context-menu">
+              <select (change)="handleAction($event, product)">
+                <option value="">⋮</option>
+                <option value="edit">Editar</option>
+                <option value="delete">Eliminar</option>
+              </select>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer-container-grid">
+    <app-grid-footer
+      [rowsQuantity]="products?.length ?? 0"
+      (startIndexEvent)="handleIndexChild($event)"
+      (rowsAmountEvent)="handleRowsAmountChild($event)"
+    >
+    </app-grid-footer>
+  </div>
+</div>
+
+<app-product-remove
+  [isOpen]="isModalOpen"
+  [productName]="productToRemove ?? ''"
+  (closeModal)="closeModal()"
+  [callback]="deleteCallback"
+>
+</app-product-remove>

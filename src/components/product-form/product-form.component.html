@@ -1,0 +1,149 @@
+<div class="form-container">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="column">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="id">ID:</label>
+          <input id="id" type="text" formControlName="id" />
+          <div
+            *ngIf="
+              productForm.get('id')?.invalid &&
+              (productForm.get('id')?.dirty || productForm.get('id')?.touched)
+            "
+            class="error"
+          >
+            <small *ngIf="productForm.get('id')?.errors?.['required']"
+              >ID es requerido</small
+            >
+            <small *ngIf="productForm.get('id')?.errors?.['minlength']"
+              >ID: mínimo 3 caracteres</small
+            >
+            <small *ngIf="productForm.get('id')?.errors?.['maxlength']"
+              >ID: máximo 10 caracteres</small
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input id="name" type="text" formControlName="name" />
+          <div
+            *ngIf="
+              productForm.get('name')?.invalid &&
+              (productForm.get('name')?.dirty ||
+                productForm.get('name')?.touched)
+            "
+            class="error"
+          >
+            <small *ngIf="productForm.get('name')?.errors?.['required']"
+              >Nombre es requerido</small
+            >
+            <small *ngIf="productForm.get('name')?.errors?.['minlength']"
+              >Nombre: mínimo 5 characters</small
+            >
+            <small *ngIf="productForm.get('name')?.errors?.['maxlength']"
+              >Nombre: máximo 100 characters</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="description">Descripción:</label>
+          <textarea id="description" formControlName="description"></textarea>
+          <div
+            *ngIf="
+              productForm.get('description')?.invalid &&
+              (productForm.get('description')?.dirty ||
+                productForm.get('description')?.touched)
+            "
+            class="error"
+          >
+            <small *ngIf="productForm.get('description')?.errors?.['required']"
+              >Descripción es requerido</small
+            >
+            <small *ngIf="productForm.get('description')?.errors?.['minlength']"
+              >Descripción: mínimo 10 characters</small
+            >
+            <small *ngIf="productForm.get('description')?.errors?.['maxlength']"
+              >Descripción: máximo 200 characters</small
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="logo">Logo:</label>
+          <input id="logo" type="text" formControlName="logo" />
+          <div
+            *ngIf="
+              (productForm.get('logo')?.invalid &&
+                productForm.get('logo')?.dirty) ||
+              productForm.get('logo')?.touched
+            "
+            class="error"
+          >
+            <small *ngIf="productForm.get('logo')?.errors?.['required']"
+              >Logo es requerido</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date_release">Fecha de Liberación:</label>
+          <input
+            id="date_release"
+            type="date"
+            formControlName="date_release"
+            (change)="setDateRevision()"
+          />
+          <div
+            *ngIf="
+              productForm.get('date_release')?.invalid &&
+              (productForm.get('date_release')?.dirty ||
+                productForm.get('date_release')?.touched)
+            "
+            class="error"
+          >
+            <small *ngIf="productForm.get('date_release')?.errors?.['required']"
+              >Fecha de Liberación es requerido</small
+            >
+            <small
+              *ngIf="
+                productForm.get('date_release')?.errors?.['dateNotBeforeToday']
+              "
+              >Fecha de Liberación debe ser a partir de hoy</small
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="date_revision">Fecha de Revisión:</label>
+          <input
+            id="date_revision"
+            type="date"
+            formControlName="date_revision"
+            readonly
+          />
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <div class="form-buttons">
+      <button type="button" (click)="navigate()">Atrás</button>
+      <button type="button" (click)="resetForm()">Reiniciar</button>
+      <button
+        type="submit"
+        [disabled]="productForm.invalid || loading || productForm.pristine"
+      >
+        {{ loading ? "Enviando..." : "Enviar" }}
+      </button>
+    </div>
+  </form>
+</div>
