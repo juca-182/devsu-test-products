@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GridFooterComponent } from './grid-footer.component';
 import { FormsModule } from '@angular/forms';
-import { SimpleChange } from '@angular/core';
 
 describe('GridFooterComponent', () => {
   let component: GridFooterComponent;

@@ -1,5 +1,4 @@
 import {
-  ChangeDetectorRef,
   Component,
   inject,
   OnInit,
@@ -31,7 +30,6 @@ export class ProductFormComponent implements OnInit {
   productForm!: FormGroup;
 
   private router: Router = inject(Router);
-  private cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   private productService: ProductsService = inject(ProductsService);
 

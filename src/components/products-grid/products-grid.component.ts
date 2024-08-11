@@ -1,12 +1,10 @@
 import {
-  AfterViewInit,
   ChangeDetectorRef,
   Component,
   EventEmitter,
   inject,
   Input,
   OnChanges,
-  OnInit,
   Output,
   signal,
   ViewEncapsulation,
@@ -17,7 +15,6 @@ import { CommonModule } from '@angular/common';
 import { GridFooterComponent } from '../grid-footer/grid-footer.component';
 import { Router, RouterLink } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
-import { log } from '@angular-devkit/build-angular/src/builders/ssr-dev-server';
 import { ProductRemoveComponent } from '../product-remove/product-remove.component';
 
 @Component({

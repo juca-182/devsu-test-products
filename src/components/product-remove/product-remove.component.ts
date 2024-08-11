@@ -1,10 +1,8 @@
 import {
   Component,
   EventEmitter,
-  inject,
   Input,
   Output,
-  TemplateRef,
   ViewEncapsulation,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';

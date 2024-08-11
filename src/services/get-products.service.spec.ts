@@ -6,7 +6,6 @@ import {
 import { ProductsService } from './products.service';
 import { environment } from '../environments/environment';
 import { Product } from '../models/product.interface';
-import { HttpErrorResponse } from '@angular/common/http';
 
 describe('ProductsService', () => {
   let service: ProductsService;

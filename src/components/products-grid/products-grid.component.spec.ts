@@ -5,11 +5,9 @@ import {
   tick,
 } from '@angular/core/testing';
 import { ProductsGridComponent } from './products-grid.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { ProductsService } from '../../services/products.service';
 import { of } from 'rxjs';
 import { Product } from '../../models/product.interface';
-import { By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {
   BrowserDynamicTestingModule,
