@@ -1,27 +1,74 @@
-# DevsuTest
+# Proyecto de Gestión de Productos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+Este proyecto es una aplicación Angular para la gestión de productos. Permite crear, editar, listar y eliminar productos.
 
-## Development server
+## Requisitos previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-## Code scaffolding
+- Node.js (versión 14.x o superior)
+- npm (normalmente viene con Node.js)
+- Angular CLI (versión 15.x o superior)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalación
 
-## Build
+1. Clona este repositorio:
+   ```
+   git clone https://github.com/tu-usuario/tu-repositorio.git
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Navega al directorio del proyecto:
+   ```
+   cd tu-repositorio
+   ```
 
-## Running unit tests
+3. Instala las dependencias:
+   ```
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Ejecutar la aplicación
 
-## Running end-to-end tests
+Para ejecutar la aplicación en modo de desarrollo:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+ng serve
+```
 
-## Further help
+Navega a `http://localhost:4200/` en tu navegador. La aplicación se recargará automáticamente si cambias alguno de los archivos fuente.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Ejecutar pruebas unitarias
+
+Para ejecutar las pruebas unitarias:
+
+```
+ng test
+```
+
+Esto lanzará [Karma](https://karma-runner.github.io) y ejecutará las pruebas unitarias.
+
+### Cobertura de código
+
+Para generar un informe de cobertura de código:
+
+```
+ng test --code-coverage
+```
+
+Esto generará un informe de cobertura en la carpeta `coverage/` del proyecto. Puedes abrir el archivo `index.html` en esta carpeta para ver el informe detallado.
+
+
+Los artefactos de construcción se almacenarán en el directorio `dist/`.
+
+## Más ayuda
+
+Para obtener más ayuda sobre Angular CLI, usa `ng help` o consulta la página [Descripción general y referencia de comandos de Angular CLI](https://angular.io/cli).
+
+## Contribuir
+
+Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir lo que te gustaría cambiar.
+
+## Licencia
+
+[MIT](https://choosealicense.com/licenses/mit/)
+# devsu-test-products
